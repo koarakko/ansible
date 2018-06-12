@@ -1,0 +1,63 @@
+- hosts: localhost
+  connection: local
+
+  vars:
+    homebrew_taps:
+      - caskroom/cask
+      - caskroom/versions
+      - homebrew/boneyard
+      - homebrew/core
+
+    homebrew_cask_packages:
+      - name: firefox
+      - name: amazon-music
+      - name: line
+      - name: docker
+      - name: atom
+      - name: totalfinder
+      - name: skype
+      - name: kindle
+      - name: visual-studio-code
+      - name: spotify
+
+    homebrew_packages:
+      - name: awscli
+      - name: python3
+      - name: nodebrew
+      - name: npm
+      - name: tree
+      - name: nmap
+      - name: pwgen
+      - name: docker
+      - name: jq
+      - name: unrar
+      - name: go
+      - name: iproute2mac
+      - name: amazon-ecs-cli
+      - name: gcc
+      - name: lua
+      - name: wget
+
+  tasks:
+    - name: homebrew update
+      homebrew:
+        update_homebrew: yes
+
+    - name: homebrew tap
+      homebrew_tap:
+        name: '{{ item }}'
+        state: present
+      with_items: '{{ homebrew_taps }}'
+
+    - name: homebrew cask packages install
+      homebrew_cask: name={{ item.name }} state=installed
+      # GUI install to `/Application`
+      environment:
+        HOMEBREW_CASK_OPTS: "--appdir=/Applications"
+      with_items: '{{ homebrew_cask_packages }}'
+
+    - name: homebrew packages install
+      homebrew:
+        name: '{{ item.name }}'
+        state: '{{ item.state | default("present") }}'
+      with_items: '{{ homebrew_packages }}'
