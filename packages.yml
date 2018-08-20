@@ -3,8 +3,8 @@
 
   vars:
     homebrew_taps:
-      - caskroom/cask
-      - caskroom/versions
+      - homebrew/cask
+      - homebrew/cask-versions
       - homebrew/boneyard
       - homebrew/core
 
@@ -14,13 +14,13 @@
       - name: line
       - name: docker
       - name: atom
-      - name: totalfinder
       - name: skype
       - name: kindle
       - name: visual-studio-code
       - name: spotify
-      # - name: slack
-      # - name: evernote
+      - name: boostnote
+      - name: minikube
+      - name: xmind
 
     homebrew_packages:
       - name: awscli
@@ -39,18 +39,21 @@
       - name: gcc
       - name: lua
       - name: wget
-      - name: mysql
+      - name: mysql@5.6
+      - name: bash
+      - name: redis
+
 
   tasks:
     - name: homebrew update
       homebrew:
         update_homebrew: yes
 
-    # - name: homebrew tap
-    #   homebrew_tap:
-    #     name: '{{ item }}'
-    #     state: present
-    #   with_items: '{{ homebrew_taps }}'
+    - name: homebrew tap
+      homebrew_tap:
+        name: '{{ item }}'
+        state: present
+      with_items: '{{ homebrew_taps }}'
 
     - name: homebrew cask packages install
       homebrew_cask: name={{ item.name }} state=installed
