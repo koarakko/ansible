@@ -21,6 +21,8 @@
       - name: boostnote
       - name: minikube
       - name: xmind
+      - name: clipy
+      - name: dash
 
     homebrew_packages:
       - name: awscli
@@ -42,6 +44,8 @@
       - name: mysql@5.6
       - name: bash
       - name: redis
+      - name: packer
+      - name: gitlab-runner
 
 
   tasks:
