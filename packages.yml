@@ -9,6 +9,7 @@
       - homebrew/core
 
     homebrew_cask_packages:
+      - name: slack
       - name: firefox
       - name: amazon-music
       - name: line
@@ -19,11 +20,14 @@
       - name: visual-studio-code
       - name: spotify
       - name: boostnote
-      - name: minikube
       - name: xmind
       - name: clipy
       - name: dash
       - name: sourcetree
+      - name: amazon-workspaces
+      - name: google-chrome-canary
+      - name: google-chrome
+      - name: iterm2
 
     homebrew_packages:
       - name: awscli
