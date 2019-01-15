@@ -23,6 +23,7 @@
       - name: xmind
       - name: clipy
       - name: dash
+      - name: sourcetree
 
     homebrew_packages:
       - name: awscli
@@ -46,6 +47,9 @@
       - name: redis
       - name: packer
       - name: gitlab-runner
+      - name: pdfcrack
+      - name: erlang
+      - name: kubernetes-helm
 
 
   tasks:
