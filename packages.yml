@@ -54,7 +54,7 @@
       - name: pdfcrack
       - name: erlang
       - name: kubernetes-helm
-
+      - name: the_silver_searcher
 
   tasks:
     - name: homebrew update
