@@ -12,7 +12,6 @@
       - name: slack
       - name: firefox
       - name: amazon-music
-      - name: line
       - name: docker
       - name: atom
       - name: skype
@@ -27,8 +26,9 @@
       - name: amazon-workspaces
       - name: google-chrome-canary
       - name: google-chrome
-      - name: iterm2
       - name: google-japanese-ime
+      - name: iterm2
+      - name: keybase
 
     homebrew_packages:
       - name: awscli
@@ -62,7 +62,6 @@
     pip_packages:
       - name: yq
 
-
   tasks:
     - name: homebrew update
       homebrew:
@@ -93,6 +92,9 @@
         executable: pip3
         state: latest
       with_items: '{{ pip_packages }}'
+
+    - name: install Xcode
+      shell: mas install 497799835
 
     - name: disable live chnage input char with keybord
       osx_defaults:
