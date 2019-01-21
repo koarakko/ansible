@@ -28,6 +28,7 @@
       - name: google-chrome-canary
       - name: google-chrome
       - name: iterm2
+      - name: google-japanese-ime
 
     homebrew_packages:
       - name: awscli
@@ -55,6 +56,12 @@
       - name: erlang
       - name: kubernetes-helm
       - name: the_silver_searcher
+      - name: tig
+      - name: mas
+
+    pip_packages:
+      - name: yq
+
 
   tasks:
     - name: homebrew update
@@ -79,3 +86,18 @@
         name: '{{ item.name }}'
         state: '{{ item.state | default("present") }}'
       with_items: '{{ homebrew_packages }}'
+
+    - name: upgrade pip
+      pip:
+        name: '{{ item.name }}'
+        executable: pip3
+        state: latest
+      with_items: '{{ pip_packages }}'
+
+    - name: disable live chnage input char with keybord
+      osx_defaults:
+        domain: com.apple.inputmethod.Kotoeri
+        key: JIMPrefLiveConversionKey
+        type: int
+        value: 0
+        state: present
