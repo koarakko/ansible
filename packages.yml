@@ -58,6 +58,7 @@
       - name: the_silver_searcher
       - name: tig
       - name: mas
+      - name: yarn
 
     pip_packages:
       - name: yq
