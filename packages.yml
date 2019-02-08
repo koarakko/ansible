@@ -63,6 +63,24 @@
     pip_packages:
       - name: yq
 
+    vscode_extensions:
+      - name: cloudformation
+        id: aws-scripting-guy.cform
+      - name: Prettier - Code formatter
+        id: esbenp.prettier-vscode
+      - name: Git History
+        id: donjayamanne.githistory
+      - name: PlantUML
+        id: jebbs.plantuml
+      - name: Rainbow CSV
+        id: mechatroner.rainbow-csv
+      - name: Bash Debug
+        id: rogalmic.bash-debug
+      - name: Trailing Spaces
+        id: shardulm94.trailing-spaces
+      - name: Regex Previewer
+        id: chrmarti.regex
+
   tasks:
     - name: homebrew update
       homebrew:
@@ -96,6 +114,10 @@
 
     - name: install Xcode
       shell: mas install 497799835
+
+    - name: install vscode extensions
+      shell: "code --install-extension  {{ item.id }}"
+      with_items: '{{ vscode_extensions }}'
 
     - name: disable live chnage input char with keybord
       osx_defaults:
