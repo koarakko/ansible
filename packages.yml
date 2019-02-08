@@ -80,6 +80,8 @@
         id: shardulm94.trailing-spaces
       - name: Regex Previewer
         id: chrmarti.regex
+      - name: YAML
+        id: redhat.vscode-yaml
 
   tasks:
     - name: homebrew update
