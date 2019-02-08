@@ -29,6 +29,7 @@
       - name: google-japanese-ime
       - name: iterm2
       - name: keybase
+      - name: postman
 
     homebrew_packages:
       - name: awscli
@@ -82,6 +83,10 @@
         id: chrmarti.regex
       - name: YAML
         id: redhat.vscode-yaml
+      - name: Ansible
+        id: vscoss.vscode-ansible
+      - name: Bash Beautify
+        id: shakram02.bash-beautify
 
   tasks:
     - name: homebrew update
