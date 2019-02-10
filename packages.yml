@@ -27,6 +27,7 @@
       - name: google-chrome-canary
       - name: google-chrome
       - name: google-japanese-ime
+      - name: google-cloud-sdk
       - name: iterm2
       - name: keybase
       - name: postman
@@ -60,6 +61,7 @@
       - name: tig
       - name: mas
       - name: yarn
+      - name: terraform
 
     pip_packages:
       - name: yq
@@ -87,6 +89,12 @@
         id: vscoss.vscode-ansible
       - name: Bash Beautify
         id: shakram02.bash-beautify
+      - name: kubernetes
+        id: ms-kubernetes-tools.vscode-kubernetes-tools
+      - name: Python
+        id: ms-python.python
+      - name: Jinja
+        id: wholroyd.jinja
 
   tasks:
     - name: homebrew update
