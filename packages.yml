@@ -5,8 +5,8 @@
     homebrew_taps:
       - homebrew/cask
       - homebrew/cask-versions
-      - homebrew/boneyard
       - homebrew/core
+      - weaveworks/tap
 
     homebrew_cask_packages:
       - name: slack
@@ -14,9 +14,9 @@
       - name: amazon-music
       - name: docker
       - name: atom
+      - name: visual-studio-code
       - name: skype
       - name: kindle
-      - name: visual-studio-code
       - name: spotify
       - name: boostnote
       - name: xmind
@@ -36,38 +36,44 @@
       - name: microsoft-remote-desktop-beta
 
     homebrew_packages:
-      - name: awscli
-      - name: python3
       - name: nodebrew
-      - name: npm
       - name: tree
       - name: nmap
       - name: pwgen
-      - name: docker
       - name: jq
       - name: unrar
-      - name: go
       - name: iproute2mac
+      - name: awscli
       - name: amazon-ecs-cli
+      - name: awsebcli
+      - name: weaveworks/tap/eksctl
+      - name: bash
+      - name: python3
       - name: gcc
       - name: lua
+      - name: go
+      - name: erlang
       - name: wget
       - name: mysql@5.6
-      - name: bash
       - name: redis
       - name: packer
       - name: gitlab-runner
       - name: pdfcrack
-      - name: erlang
+      - name: docker
       - name: kubernetes-helm
+      - name: helmfile
+      - name: kustomize
       - name: the_silver_searcher
       - name: tig
       - name: mas
       - name: yarn
       - name: terraform
+      - name: watch
+      - name: bash-completion@2
 
     pip_packages:
       - name: yq
+      - name: aws-encryption-sdk-cli
 
     vscode_extensions:
       - name: cloudformation
@@ -130,7 +136,7 @@
     - name: upgrade pip
       pip:
         name: '{{ item.name }}'
-        executable: pip3
+        executable: pip
         state: latest
       with_items: '{{ pip_packages }}'
 
