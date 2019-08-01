@@ -34,6 +34,8 @@
       - name: virtualbox
       - name: station
       - name: microsoft-remote-desktop-beta
+      - name: sequel-pro
+      - name: datagrip
 
     homebrew_packages:
       - name: nodebrew
@@ -161,3 +163,8 @@
         key: AppleShowAllExtensions
         type: bool
         value: true
+
+    - name: setting bash
+      shell: 
+
+# ansible-playbook -i hosts packages.yml 
