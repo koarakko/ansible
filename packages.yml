@@ -9,69 +9,69 @@
       - weaveworks/tap
 
     homebrew_cask_packages:
-      - name: slack
-      - name: firefox
       - name: amazon-music
-      - name: docker
+      - name: amazon-workspaces
       - name: atom
-      - name: visual-studio-code
-      - name: skype
-      - name: kindle
-      - name: spotify
       - name: boostnote
-      - name: xmind
       - name: clipy
       - name: dash
-      - name: sourcetree
-      - name: amazon-workspaces
-      - name: google-chrome-canary
+      - name: datagrip
+      - name: docker
+      - name: firefox
       - name: google-chrome
-      - name: google-japanese-ime
+      - name: google-chrome-canary
       - name: google-cloud-sdk
+      - name: google-japanese-ime
       - name: iterm2
       - name: keybase
-      - name: postman
-      - name: virtualbox
-      - name: station
+      - name: kindle
       - name: microsoft-remote-desktop-beta
+      - name: postman
       - name: sequel-pro
-      - name: datagrip
+      - name: skype
+      - name: slack
+      - name: sourcetree
+      - name: spotify
+      - name: station
+      - name: virtualbox
+      - name: visual-studio-code
+      - name: xmind
 
     homebrew_packages:
-      - name: nodebrew
-      - name: tree
-      - name: nmap
-      - name: pwgen
-      - name: jq
-      - name: unrar
-      - name: iproute2mac
-      - name: awscli
       - name: amazon-ecs-cli
+      - name: awscli
       - name: awsebcli
-      - name: weaveworks/tap/eksctl
       - name: bash
-      - name: python3
-      - name: gcc
-      - name: lua
-      - name: go
-      - name: erlang
-      - name: wget
-      - name: mysql@5.6
-      - name: redis
-      - name: packer
-      - name: gitlab-runner
-      - name: pdfcrack
+      - name: bash-completion@2
       - name: docker
-      - name: kubernetes-helm
+      - name: erlang
+      - name: gcc
+      - name: gitlab-runner
+      - name: go
       - name: helmfile
+      - name: iproute2mac
+      - name: jq
+      - name: kubernetes-helm
       - name: kustomize
+      - name: lua
+      - name: mas
+      - name: mysql@5.6
+      - name: nmap
+      - name: nodebrew
+      - name: packer
+      - name: pdfcrack
+      - name: pwgen
+      - name: python3
+      - name: redis
+      - name: terraform
       - name: the_silver_searcher
       - name: tig
-      - name: mas
-      - name: yarn
-      - name: terraform
+      - name: tree
+      - name: unrar
       - name: watch
-      - name: bash-completion@2
+      - name: weaveworks/tap/eksctl
+      - name: wget
+      - name: yarn
 
     pip_packages:
       - name: yq
