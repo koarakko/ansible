@@ -86,6 +86,8 @@
       - name: aws-encryption-sdk-cli
       - name: pipenv
 
+    npm_global_packages:
+      - name: aws-cdk
 
     vscode_extensions:
       - name: cloudformation
@@ -149,6 +151,12 @@
         executable: pip
         state: latest
       with_items: '{{ pip_packages }}'
+
+    - name: install npm global packages
+      npm:
+        name: '{{ item.name }}'
+        global: yes
+      with_items: '{{ npm_global_package }}'
 
     - name: install Xcode
       shell: mas install 497799835
