@@ -72,10 +72,20 @@
       - name: weaveworks/tap/eksctl
       - name: wget
       - name: yarn
+      - name: rust
+      - name: cowsay
+      - name: lastpass-cli
+      - name: zsh
+      - name: tmux
+      - name: open-cobol
+      - name: aws-elasticbeanstalk
+      - name: pyenv
 
     pip_packages:
       - name: yq
       - name: aws-encryption-sdk-cli
+      - name: pipenv
+
 
     vscode_extensions:
       - name: cloudformation
@@ -108,8 +118,6 @@
         id: wholroyd.jinja
       - name: Code Spell Checker
         id: streetsidesoftware.code-spell-checker
-      - name: docs-yaml
-        id: gizmos.docs-yaml
 
   tasks:
     - name: homebrew update
@@ -164,7 +172,11 @@
         type: bool
         value: true
 
-    - name: setting bash
-      shell: 
+    - name: bash_completion for docker
+      shell: |
+        ln -s /Applications/Docker.app/Contents/Resources/etc/docker.bash-completion /usr/local/etc/bash_completion.d/docker &&
+        ln -s /Applications/Docker.app/Contents/Resources/etc/docker-machine.bash-completion /usr/local/etc/bash_completion.d/docker-machine &&
+        ln -s /Applications/Docker.app/Contents/Resources/etc/docker-compose.bash-completion /usr/local/etc/bash_completion.d/docker-compose
 
-# ansible-playbook -i hosts packages.yml 
+
+# ansible-playbook -i hosts packages.yml
