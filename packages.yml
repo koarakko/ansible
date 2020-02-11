@@ -80,6 +80,7 @@
       - name: open-cobol
       - name: aws-elasticbeanstalk
       - name: pyenv
+      - name: oath-toolkit
 
     pip_packages:
       - name: yq
