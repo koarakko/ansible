@@ -89,6 +89,7 @@
     npm_global_packages:
       - name: aws-cdk
       - name: ts-node
+      - name: authenticator-cli
 
     vscode_extensions:
       - name: cloudformation
