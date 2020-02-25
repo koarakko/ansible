@@ -81,6 +81,7 @@
       - name: aws-elasticbeanstalk
       - name: pyenv
       - name: oath-toolkit
+      - name: pstree
 
     pip_packages:
       - name: yq
