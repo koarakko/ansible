@@ -82,6 +82,7 @@
       - name: pyenv
       - name: oath-toolkit
       - name: pstree
+      - name: bat
 
     pip_packages:
       - name: yq
