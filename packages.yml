@@ -93,6 +93,7 @@
       - name: aws-cdk
       - name: ts-node
       - name: authenticator-cli
+      - name: python-gitlab
 
     vscode_extensions:
       - name: cloudformation
