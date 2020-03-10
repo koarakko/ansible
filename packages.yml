@@ -84,6 +84,7 @@
       - name: oath-toolkit
       - name: pstree
       - name: bat
+      - name: pv
 
     pip_packages:
       - name: yq
