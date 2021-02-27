@@ -11,40 +11,40 @@
     homebrew_cask_packages:
       - name: amazon-music
       - name: amazon-workspaces
-      - name: atom
       - name: boostnote
       - name: clipy
       - name: dash
       - name: datagrip
-      - name: docker
+      - name: docker # need setup
       - name: firefox
-      - name: google-chrome
+#      - name: google-chrome
       - name: google-chrome-canary
       - name: google-cloud-sdk
       - name: google-japanese-ime
       - name: iterm2
       - name: keybase
       - name: kindle
-      - name: microsoft-remote-desktop-beta
+      - name: remote-desktop-manager # microsoft remote
       - name: postman
       - name: sequel-pro
       - name: skype
       - name: slack
       - name: sourcetree
       - name: spotify
-      - name: station
-      - name: virtualbox
       - name: visual-studio-code
       - name: xmind
+      - name: zoom
+      - name: biscuit
+      - name: alfred
+      - name: sublime-text
 
     homebrew_packages:
       - name: amazon-ecs-cli
       - name: awscli
       - name: awsebcli
       - name: bash
-      - name: bash-completion@2
+      - name: bash-completion@2 # bash 4 <=
       - name: docker
-      - name: erlang
       - name: gcc
       - name: gitlab-runner
       - name: go
@@ -68,7 +68,6 @@
       - name: the_silver_searcher
       - name: tig
       - name: tree
-      - name: unrar
       - name: watch
       - name: weaveworks/tap/eksctl
       - name: wget
@@ -85,10 +84,11 @@
       - name: pstree
       - name: bat
       - name: pv
+      - name: git # also install git-completion
 
     pip_packages:
       - name: yq
-      - name: aws-encryption-sdk-cli
+#      - name: aws-encryption-sdk-cli
       - name: pipenv
       - name: python-gitlab
 
@@ -153,10 +153,10 @@
         state: '{{ item.state | default("present") }}'
       with_items: '{{ homebrew_packages }}'
 
-    - name: upgrade pip
+    - name: upgrade pip3
       pip:
         name: '{{ item.name }}'
-        executable: pip
+        executable: pip3
         state: latest
       with_items: '{{ pip_packages }}'
 
@@ -164,7 +164,7 @@
       npm:
         name: '{{ item.name }}'
         global: yes
-      with_items: '{{ npm_global_package }}'
+      with_items: '{{ npm_global_packages }}'
 
     - name: install Xcode
       shell: mas install 497799835
@@ -187,6 +187,19 @@
         key: AppleShowAllExtensions
         type: bool
         value: true
+
+    - name: show dotfiles
+      osx_defaults:
+        domain: finder
+        key: AppleShowAllFiles
+        type: bool
+        value: true
+
+    - name: interface dark
+      osx_defaults:
+        key: AppleInterfaceStyle
+        type: string
+        value: Dark
 
     - name: bash_completion for docker
       shell: |
