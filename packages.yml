@@ -130,82 +130,96 @@
         id: streetsidesoftware.code-spell-checker
 
   tasks:
-    - name: homebrew update
-      homebrew:
-        update_homebrew: yes
+    # - name: homebrew update
+    #   homebrew:
+    #     update_homebrew: yes
 
-    - name: homebrew tap
-      homebrew_tap:
-        name: '{{ item }}'
-        state: present
-      with_items: '{{ homebrew_taps }}'
+    # - name: homebrew tap
+    #   homebrew_tap:
+    #     name: '{{ item }}'
+    #     state: present
+    #   with_items: '{{ homebrew_taps }}'
 
-    - name: homebrew cask packages install
-      homebrew_cask: name={{ item.name }} state=installed
-      # GUI install to `/Application`
-      environment:
-        HOMEBREW_CASK_OPTS: "--appdir=/Applications"
-      with_items: '{{ homebrew_cask_packages }}'
+    # - name: homebrew cask packages install
+    #   homebrew_cask: name={{ item.name }} state=installed
+    #   # GUI install to `/Application`
+    #   environment:
+    #     HOMEBREW_CASK_OPTS: "--appdir=/Applications"
+    #   with_items: '{{ homebrew_cask_packages }}'
 
-    - name: homebrew packages install
-      homebrew:
-        name: '{{ item.name }}'
-        state: '{{ item.state | default("present") }}'
-      with_items: '{{ homebrew_packages }}'
+    # - name: homebrew packages install
+    #   homebrew:
+    #     name: '{{ item.name }}'
+    #     state: '{{ item.state | default("present") }}'
+    #   with_items: '{{ homebrew_packages }}'
 
-    - name: upgrade pip3
-      pip:
-        name: '{{ item.name }}'
-        executable: pip3
-        state: latest
-      with_items: '{{ pip_packages }}'
+    # - name: upgrade pip3
+    #   pip:
+    #     name: '{{ item.name }}'
+    #     executable: pip3
+    #     state: latest
+    #   with_items: '{{ pip_packages }}'
 
-    - name: install npm global packages
-      npm:
-        name: '{{ item.name }}'
-        global: yes
-      with_items: '{{ npm_global_packages }}'
+    # - name: install npm global packages
+    #   npm:
+    #     name: '{{ item.name }}'
+    #     global: yes
+    #   with_items: '{{ npm_global_packages }}'
 
-    - name: install Xcode
-      shell: mas install 497799835
+    # - name: install Xcode
+    #   shell: mas install 497799835
 
-    - name: install vscode extensions
-      shell: "code --install-extension  {{ item.id }}"
-      with_items: '{{ vscode_extensions }}'
+    # - name: install vscode extensions
+    #   shell: "code --install-extension  {{ item.id }}"
+    #   with_items: '{{ vscode_extensions }}'
 
-    - name: disable live chnage input char with keybord
-      osx_defaults:
-        domain: com.apple.inputmethod.Kotoeri
-        key: JIMPrefLiveConversionKey
-        type: int
-        value: 0
-        state: present
+    # - name: disable live chnage input char with keybord
+    #   osx_defaults:
+    #     domain: com.apple.inputmethod.Kotoeri
+    #     key: JIMPrefLiveConversionKey
+    #     type: int
+    #     value: 0
+    #     state: present
 
-    - name: enable file extension
-      osx_defaults:
-        domain: NSGlobalDomain
-        key: AppleShowAllExtensions
-        type: bool
-        value: true
+    # - name: enable file extension
+    #   osx_defaults:
+    #     domain: NSGlobalDomain
+    #     key: AppleShowAllExtensions
+    #     type: bool
+    #     value: true
 
     - name: show dotfiles
       osx_defaults:
-        domain: finder
+        domain: com.apple.finder
         key: AppleShowAllFiles
         type: bool
         value: true
 
-    - name: interface dark
-      osx_defaults:
-        key: AppleInterfaceStyle
-        type: string
-        value: Dark
 
-    - name: bash_completion for docker
-      shell: |
-        ln -s /Applications/Docker.app/Contents/Resources/etc/docker.bash-completion /usr/local/etc/bash_completion.d/docker &&
-        ln -s /Applications/Docker.app/Contents/Resources/etc/docker-machine.bash-completion /usr/local/etc/bash_completion.d/docker-machine &&
-        ln -s /Applications/Docker.app/Contents/Resources/etc/docker-compose.bash-completion /usr/local/etc/bash_completion.d/docker-compose
+    - name: show full path
+      osx_defaults:
+        domain: com.apple.finder
+        key: _FXShowPosixPathInTitle
+        type: bool
+        value: true
+
+    # - name: interface dark
+    #   osx_defaults:
+    #     key: AppleInterfaceStyle
+    #     type: string
+    #     value: Dark
+
+    - name: dock big icon
+      osx_defaults:
+        domain: com.apple.dock
+        key: magnification
+        type: integer
+        value: 1
+    # - name: bash_completion for docker
+    #   shell: |
+    #     ln -s /Applications/Docker.app/Contents/Resources/etc/docker.bash-completion /usr/local/etc/bash_completion.d/docker &&
+    #     ln -s /Applications/Docker.app/Contents/Resources/etc/docker-machine.bash-completion /usr/local/etc/bash_completion.d/docker-machine &&
+    #     ln -s /Applications/Docker.app/Contents/Resources/etc/docker-compose.bash-completion /usr/local/etc/bash_completion.d/docker-compose
 
 
 # ansible-playbook -i hosts packages.yml
