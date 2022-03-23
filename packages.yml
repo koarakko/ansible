@@ -38,6 +38,7 @@
       - name: alfred
       - name: sublime-text
       - name: asana
+      - name: tor-browser
 
     homebrew_packages:
       - name: amazon-ecs-cli
