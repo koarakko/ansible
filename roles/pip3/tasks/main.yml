@@ -1,0 +1,9 @@
+- name: upgrade pip3
+  pip:
+    name: '{{ item }}'
+    executable: pip3
+    state: latest
+  with_items:
+    - yq
+    - pipenv
+    - python-gitlab
