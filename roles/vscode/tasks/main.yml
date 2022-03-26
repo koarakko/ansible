@@ -10,7 +10,7 @@
 - name: install vscode extensions
   shell: "code --install-extension {{ item }}"
   with_items:
-    - aws-scripting-guy.cform # cloudformation
+    - dsteenman.cloudformation-yaml-snippets # cloudformation
     - esbenp.prettier-vscode # Prettier - Code formatter
     - donjayamanne.githistory # Git History
     - jebbs.plantuml # PlantUML
