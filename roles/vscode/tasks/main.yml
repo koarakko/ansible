@@ -7,5 +7,24 @@
     group: staff
     mode: 0644
 
-
-# lookup("env", "HOME") + "/Library/Application Support/Code/User/keybindings.json"
+- name: install vscode extensions
+  shell: "code --install-extension {{ item }}"
+  with_items:
+    - aws-scripting-guy.cform # cloudformation
+    - esbenp.prettier-vscode # Prettier - Code formatter
+    - donjayamanne.githistory # Git History
+    - jebbs.plantuml # PlantUML
+    - mechatroner.rainbow-csv # Rainbow CSV
+    - rogalmic.bash-debug # Bash Debug
+    - shardulm94.trailing-spaces # Trailing Spaces
+    - chrmarti.regex # Regex Previewer
+    - redhat.vscode-yaml # YAML
+    - redhat.ansible # Ansible
+    - shakram02.bash-beautify # Bash Beautify
+    - ms-kubernetes-tools.vscode-kubernetes-tools # kubernetes
+    - ms-python.python # Python
+    - wholroyd.jinja # Jinja
+    - streetsidesoftware.code-spell-checker # Code Spell Checker
+    - humao.rest-client
+    - eamodio.gitlens
+    - GitLab.gitlab-workflow
