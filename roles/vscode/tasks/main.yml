@@ -29,3 +29,4 @@
     - eamodio.gitlens
     - GitLab.gitlab-workflow
     - oderwat.indent-rainbow
+    - kddejong.vscode-cfn-lint
