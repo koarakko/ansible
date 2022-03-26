@@ -1,0 +1,9 @@
+- name: customize prompt
+  ansible.builtin.lineinfile:
+    path: ~/.bash_profile
+    line: !unsafe export PS1='\h\[\033[00m\]:\D{%Y-%m-%d-}\t \W\[\033[31m\]$(__git_ps1 [%s])\[\033[00m\]\$ '
+
+- name: print prompt to git branch
+  ansible.builtin.lineinfile:
+    path: ~/.bash_profile
+    line: "GIT_PS1_SHOWDIRTYSTATE=true"
