@@ -1,0 +1,11 @@
+---
+- name: Copy vscode keybindings.json
+  copy:
+    src: files/keybindings.json
+    dest: "{{ ansible_env.HOME }}/Library/Application Support/Code/User/keybindings.json"
+    owner: "{{ ansible_env.USER }}"
+    group: staff
+    mode: 0644
+
+
+# lookup("env", "HOME") + "/Library/Application Support/Code/User/keybindings.json"
