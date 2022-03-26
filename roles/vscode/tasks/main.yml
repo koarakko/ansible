@@ -27,5 +27,5 @@
     - streetsidesoftware.code-spell-checker # Code Spell Checker
     - humao.rest-client
     - eamodio.gitlens
-    - GitLab.gitlab-
+    - GitLab.gitlab-workflow
     - oderwat.indent-rainbow
