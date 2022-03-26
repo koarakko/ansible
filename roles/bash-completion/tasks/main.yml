@@ -1,0 +1,25 @@
+- name: Add bash-completion in bash_profile
+  lineinfile:
+    path: ~/.bash_profile
+    line: '[[ -r "/usr/local/etc/profile.d/bash_completion.sh" ]] && . "/usr/local/etc/profile.d/bash_completion.sh"'
+
+- name: Create symbolic link for docker.bash-completion
+  file:
+    src: /Applications/Docker.app/Contents/Resources/etc/docker.bash-completion
+    dest: /usr/local/etc/bash_completion.d/docker
+    state: link
+    force: yes
+
+- name: Create symbolic link for docker-machine.bash-completion
+  file:
+    src: /Applications/Docker.app/Contents/Resources/etc/docker-machine.bash-completion
+    dest: /usr/local/etc/bash_completion.d/docker-machine
+    state: link
+    force: yes
+
+- name: Create symbolic link for docker-compose.bash-completion
+  file:
+    src: /Applications/Docker.app/Contents/Resources/etc/docker-compose.bash-completion
+    dest: /usr/local/etc/bash_completion.d/docker-compose
+    state: link
+    force: yes
