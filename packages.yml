@@ -3,10 +3,10 @@
   hosts: localhost
   connection: local
   roles:
-    # - brew
-    # - pip3
-    # - npm
-    # - vscode
-    # - macos-setup
-    # - bash-completion
+    - brew
+    - pip3
+    - npm
+    - vscode
+    - macos-setup
+    - bash-completion
     - bash-customize
