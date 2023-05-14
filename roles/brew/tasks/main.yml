@@ -20,35 +20,28 @@
   environment:
     HOMEBREW_CASK_OPTS: "--appdir=/Applications"
   with_items:
-    - amazon-music
     - amazon-workspaces
     - boostnote
-    - clipy
     - dash
     - datagrip
     - docker # should be setup after installing
-    - firefox
 #      - google-chrome
     - google-chrome-canary
     - google-cloud-sdk
     - google-japanese-ime
     - iterm2
     - keybase
-    - kindle
     - remote-desktop-manager # microsoft remote desktop
     - postman
     - sequel-pro
     - skype
     - slack
     - sourcetree
-    - spotify
     - visual-studio-code
-    - xmind
     - zoom
     - biscuit
     - alfred
     - sublime-text
-    - asana
     - tor-browser
 
 - name: homebrew packages install
@@ -94,7 +87,6 @@
     - lastpass-cli
     - zsh
     - tmux
-    - open-cobol
     - aws-elasticbeanstalk
     - pyenv
     - oath-toolkit
