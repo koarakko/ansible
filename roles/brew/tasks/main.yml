@@ -27,22 +27,26 @@
     - docker # should be setup after installing
 #      - google-chrome
     - google-chrome-canary
-    - google-cloud-sdk
+    # - google-cloud-sdk
     - google-japanese-ime
     - iterm2
     - keybase
     - remote-desktop-manager # microsoft remote desktop
     - postman
     - sequel-pro
-    - skype
+    # - skype
     - slack
-    - sourcetree
+    # - sourcetree
     - visual-studio-code
     - zoom
-    - biscuit
-    - alfred
+    # - biscuit
+    # - alfred
     - sublime-text
-    - tor-browser
+    # - tor-browser
+    - brave-browser
+    - google-chrome@dev
+    - firefox
+    - warp # terminal
 
 - name: homebrew packages install
   community.general.homebrew:
@@ -51,12 +55,12 @@
   with_items:
     - amazon-ecs-cli
     - awscli
-    - awsebcli
+    # - awsebcli
     - bash
     - bash-completion@2 # bash 4 <=
     - docker
     - gcc
-    - gitlab-runner
+    # - gitlab-runner
     - go
     - helmfile
     - iproute2mac
@@ -64,35 +68,38 @@
     - kubernetes-helm
     - kustomize
     - kubectx
-    - lua
+    # - lua
     - mas
     - mysql@5.6
     - nmap
     - nodebrew
-    - packer
-    - pdfcrack
+    # - packer
+    # - pdfcrack
     - pwgen
-    - python3
+    # - python3
     - redis
-    - terraform
-    - the_silver_searcher
-    - tig
+    # - terraform
+    # - the_silver_searcher
+    # - tig
     - tree
     - watch
     - weaveworks/tap/eksctl
     - wget
     - yarn
     - rust
-    - cowsay
-    - lastpass-cli
-    - zsh
+    # - cowsay
+    # - lastpass-cli
+    # - zsh
     - tmux
-    - aws-elasticbeanstalk
+    # - aws-elasticbeanstalk
     - pyenv
     - oath-toolkit
     - pstree
-    - bat
-    - pv
+    # - bat
+    # - pv
     - git # also be installed git-completion
     - asdf
     - aws-sam-cli
+    - starship
+    - kitty
+    - pwgen
