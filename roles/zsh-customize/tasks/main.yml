@@ -1,0 +1,25 @@
+- name: Add export PAGER=cat to .zshrc
+  ansible.builtin.lineinfile:
+    path: ~/.zshrc
+    line: "export PAGER=cat"
+    state: present
+
+- name: awscli@v2 completion # https://docs.aws.amazon.com/ja_jp/cli/latest/userguide/cli-configure-completion.html
+  ansible.builtin.blockinfile:
+    path: ~/.zshrc
+    block: |
+      # aws cli v2 completion
+      autoload bashcompinit && bashcompinit
+      complete -C '/opt/homebrew/bin/aws_completer' aws
+
+- name: zsh-autosuggestions path
+  ansible.builtin.lineinfile:
+    path: ~/.zshrc
+    line: "source /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh"
+      
+- name: node-brew path
+  ansible.builtin.lineinfile:
+    path: ~/.zshrc
+    line: "export PATH=$HOME/.nodebrew/current/bin:$PATH"
+      
+

@@ -15,7 +15,7 @@
     - donjayamanne.githistory # Git History
     - jebbs.plantuml # PlantUML
     - mechatroner.rainbow-csv # Rainbow CSV
-    - rogalmic.bash-debug # Bash Debug
+    # - rogalmic.bash-debug # Bash Debug
     - shardulm94.trailing-spaces # Trailing Spaces
     - chrmarti.regex # Regex Previewer
     - redhat.vscode-yaml # YAML
@@ -27,6 +27,6 @@
     - streetsidesoftware.code-spell-checker # Code Spell Checker
     - humao.rest-client
     - eamodio.gitlens
-    - GitLab.gitlab-workflow
+    # - GitLab.gitlab-workflow
     - oderwat.indent-rainbow
     - kddejong.vscode-cfn-lint

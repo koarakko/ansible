@@ -7,99 +7,99 @@
   community.general.homebrew_tap:
     name: '{{ item }}'
     state: present
-  with_items:
-    - homebrew/cask-versions
-    - homebrew/core
+  loop:
     - weaveworks/tap
 
 - name: homebrew cask packages install
   community.general.homebrew_cask:
     name: '{{ item }}'
-    state: installed
-  # GUI install to `/Application`
-  environment:
-    HOMEBREW_CASK_OPTS: "--appdir=/Applications"
-  with_items:
+    state: latest
+  loop:
     - amazon-workspaces
-    - boostnote
-    - dash
+    - brave-browser
     - datagrip
     - docker # should be setup after installing
-#      - google-chrome
-    - google-chrome-canary
-    # - google-cloud-sdk
+    - firefox
+    - firefox@developer-edition
+    - google-chrome@canary
+    - google-chrome@dev
     - google-japanese-ime
     - iterm2
+    - itsycal
     - keybase
-    - remote-desktop-manager # microsoft remote desktop
     - postman
-    - sequel-pro
-    # - skype
+    - remote-desktop-manager # microsoft remote desktop
+    - sequel-ace
     - slack
-    # - sourcetree
+    - sublime-text
     - visual-studio-code
     - zoom
-    # - biscuit
     # - alfred
-    - sublime-text
+    # - biscuit
+    # - boostnote
+    # - dash
+    # - google-chrome
+    # - google-cloud-sdk
+    # - skype
+    # - sourcetree
     # - tor-browser
-    - brave-browser
-    - google-chrome@dev
-    - firefox
-    - warp # terminal
+    # - warp # terminal
 
 - name: homebrew packages install
   community.general.homebrew:
     name: '{{ item }}'
-    state: '{{ item.state | default("present") }}'
-  with_items:
+    state: latest
+  loop:
     - amazon-ecs-cli
+    - asdf
+    - aws-sam-cli
     - awscli
-    # - awsebcli
     - bash
     - bash-completion@2 # bash 4 <=
     - docker
     - gcc
-    # - gitlab-runner
+    - git # also be installed git-completion
     - go
     - helmfile
     - iproute2mac
     - jq
+    - kitty
+    - kubectx
     - kubernetes-helm
     - kustomize
-    - kubectx
-    # - lua
     - mas
-    - mysql@5.6
     - nmap
     - nodebrew
-    # - packer
-    # - pdfcrack
+    - pstree
     - pwgen
-    # - python3
+    - pyenv
     - redis
-    # - terraform
-    # - the_silver_searcher
-    # - tig
+    - rust
+    - tmux
     - tree
     - watch
     - weaveworks/tap/eksctl
-    - wget
     - yarn
-    - rust
-    # - cowsay
-    # - lastpass-cli
-    # - zsh
-    - tmux
+    - zsh-autosuggestions
     # - aws-elasticbeanstalk
-    - pyenv
-    - oath-toolkit
-    - pstree
+    # - awsebcli
     # - bat
+    # - cowsay
+    # - gitlab-runner
+    # - lastpass-cli
+    # - lua
+    # - mysql@5.6
+    # - oath-toolkit
+    # - packer
+    # - pdfcrack
     # - pv
-    - git # also be installed git-completion
-    - asdf
-    - aws-sam-cli
-    - starship
-    - kitty
-    - pwgen
+    # - python3
+    # - starship
+    # - terraform
+    # - the_silver_searcher
+    # - tig
+    # - wget
+    # - zsh
+
+- name: Run nodebrew setup_dirs
+  command: /opt/homebrew/opt/nodebrew/bin/nodebrew setup_dirs

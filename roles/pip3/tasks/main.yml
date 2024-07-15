@@ -3,7 +3,5 @@
     name: '{{ item }}'
     executable: pip3
     state: latest
-  with_items:
+  loop:
     - yq
-    - pipenv
-    - python-gitlab

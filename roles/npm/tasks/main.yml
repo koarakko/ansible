@@ -2,7 +2,7 @@
   community.general.npm:
     name: '{{ item }}'
     global: yes
-  with_items:
+  loop:
+    - authenticator-cli
     - aws-cdk
     - ts-node
-    - authenticator-cli

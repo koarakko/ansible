@@ -1,13 +1,13 @@
-- name: install Xcode
-  ansible.builtin.shell: mas install 497799835
+# - name: install Xcode
+#   ansible.builtin.shell: mas install 497799835
 
-- name: disable live chnage input char with keybord
-  community.general.osx_defaults:
-    domain: com.apple.inputmethod.Kotoeri
-    key: JIMPrefLiveConversionKey
-    type: int
-    value: 0
-    state: present
+# - name: disable live chnage input char with keybord
+#   community.general.osx_defaults:
+#     domain: com.apple.inputmethod.Kotoeri
+#     key: JIMPrefLiveConversionKey
+#     type: int
+#     value: 0
+#     state: present
 
 - name: enable file extension
   community.general.osx_defaults:
@@ -30,11 +30,11 @@
     type: bool
     value: true
 
-- name: interface dark
-  community.general.osx_defaults:
-    key: AppleInterfaceStyle
-    type: string
-    value: Dark
+# - name: interface dark
+#   community.general.osx_defaults:
+#     key: AppleInterfaceStyle
+#     type: string
+#     value: Dark
 
 - name: dock big icon
   community.general.osx_defaults:

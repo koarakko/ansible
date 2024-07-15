@@ -8,5 +8,5 @@
     - npm
     - vscode
     - macos-setup
-    - bash-completion
-    - bash-customize
+    - zsh-customize
+    # - bash-customize
